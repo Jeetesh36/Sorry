@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I'm Sorry Sana ❤️</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: "Segoe UI", sans-serif;
+            background: linear-gradient(135deg, #ff758c, #ff7eb3, #a18cd1);
+            color: white;
+            overflow-x: hidden;
+        }
+
+        .hearts {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .heart {
+            position: absolute;
+            bottom: -50px;
+            color: rgba(255,255,255,0.8);
+            font-size: 25px;
+            animation: float 7s linear infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-110vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            width: 92%;
+            max-width: 850px;
+            margin: auto;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.16);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 30px;
+            padding: 45px 30px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+        }
+
+        .heart-icon {
+            font-size: 70px;
+            animation: beat 1.2s infinite;
+        }
+
+        @keyframes beat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        h1 {
+            font-size: 48px;
+            margin: 15px 0;
+        }
+
+        .name {
+            color: #fff4a3;
+            text-shadow: 0 0 15px rgba(255,255,255,0.5);
+        }
+
+        .subtitle {
+            font-size: 20px;
+            opacity: 0.95;
+            margin-bottom: 35px;
+        }
+
+        .letter {
+            background: rgba(255,255,255,0.92);
+            color: #4a2634;
+            border-radius: 22px;
+            padding: 30px;
+            text-align: left;
+            line-height: 1.8;
+            margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .letter h2 {
+            text-align: center;
+            color: #e75480;
+            margin-bottom: 20px;
+        }
+
+        .letter p {
+            margin-bottom: 15px;
+        }
+
+        .signature {
+            text-align: right;
+            font-style: italic;
+            color: #e75480;
+            font-size: 18px;
+        }
+
+        .music {
+            margin: 30px 0;
+        }
+
+        .music h2 {
+            margin-bottom: 15px;
+        }
+
+        audio {
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .buttons {
+            margin-top: 30px;
+        }
+
+        button {
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 8px;
+            transition: 0.3s;
+        }
+
+        .sorry-btn {
+            background: white;
+            color: #e75480;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .sorry-btn:hover {
+            transform: translateY(-4px) scale(1.03);
+        }
+
+        .message {
+            display: none;
+            margin-top: 25px;
+            font-size: 22px;
+            font-weight: bold;
+            animation: appear 0.8s ease;
+        }
+
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        @media(max-width: 600px) {
+            h1 {
+                font-size: 34px;
+            }
+
+            .card {
+                padding: 30px 18px;
+            }
+
+            .letter {
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Floating Hearts -->
+    <div class="hearts" id="hearts"></div>
+
+    <div class="container">
+
+        <div class="card">
+
+            <div class="heart-icon">❤️</div>
+
+            <h1>I'm Sorry, <span class="name">Sana</span></h1>
+
+            <p class="subtitle">
+                I know I hurt you, and I truly regret it.
+            </p>
+
+            <!-- Apology Letter -->
+            <div class="letter">
+
+                <h2>💌 A Letter For Sana</h2>
+
+                <p>
+                    My Dear Sana,
+                </p>
+
+                <p>
+                    I don't know if these words can completely express
+                    how sorry I am, but I want to try.
+                </p>
+
+                <p>
+                    I know that I hurt you, and I know that my actions
+                    made you sad. You didn't deserve to feel that way,
+                    especially because of me.
+                </p>
+
+                <p>
+                    I'm not going to make excuses for what I did.
+                    I was wrong, and I'm genuinely sorry.
+                </p>
+
+                <p>
+                    If I could go back and change that moment, I would.
+                    But since I can't change the past, I can promise
+                    you that I will learn from my mistake and try to
+                    become a better person.
+                </p>
+
+                <p>
+                    I miss talking to you. I miss your smile, your
+                    messages, your little conversations, and simply
+                    having you around.
+                </p>
+
+                <p>
+                    I don't expect you to forget everything immediately.
+                    Take whatever time you need. Your feelings matter
+                    to me, and I respect your space.
+                </p>
+
+                <p>
+                    All I want you to know is that I'm truly,
+                    deeply sorry, Sana. ❤️
+                </p>
+
+                <p>
+                    I hope one day you can forgive me.
+                </p>
+
+                <p class="signature">
+                    With all my heart,<br>
+                    The person who is truly sorry ❤️
+                </p>
+
+            </div>
+
+            <!-- Song -->
+            <div class="music">
+                <h2>🎵 A Song For You</h2>
+
+                <p style="margin-bottom:15px;">
+                    Press play and listen while reading my apology ❤️
+                </p>
+
+                <audio id="song" controls>
+                    <source src="song.mp3" type="audio/mpeg">
+                    Your browser does not support the audio player.
+                </audio>
+            </div>
+
+            <!-- Button -->
+            <div class="buttons">
+
+                <button class="sorry-btn" onclick="showSorry()">
+                    💗 Forgive Me, Sana?
+                </button>
+
+            </div>
+
+            <div class="message" id="message">
+                🥺 I promise I'll try to do better.<br>
+                You mean more to me than my mistakes. ❤️
+            </div>
+
+            <div class="footer">
+                Made with a genuinely sorry heart ❤️
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        // Create floating hearts
+        const heartsContainer = document.getElementById("hearts");
+
+        function createHeart() {
+            const heart = document.createElement("div");
+
+            heart.classList.add("heart");
+            heart.innerHTML = ["❤️", "💕", "💗", "💖", "💓"][Math.floor(Math.random() * 5)];
+
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.fontSize = (15 + Math.random() * 30) + "px";
+            heart.style.animationDuration = (5 + Math.random() * 5) + "s";
+
+            heartsContainer.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 10000);
+        }
+
+        setInterval(createHeart, 400);
+
+
+        // Forgive button
+        function showSorry() {
+
+            const message = document.getElementById("message");
+
+            message.style.display = "block";
+
+            // Create heart explosion
+            for (let i = 0; i < 20; i++) {
+
+                const heart = document.createElement("div");
+
+                heart.innerHTML = "❤️";
+                heart.style.position = "fixed";
+                heart.style.left = "50%";
+                heart.style.top = "50%";
+                heart.style.fontSize = "25px";
+                heart.style.zIndex = "9999";
+                heart.style.pointerEvents = "none";
+
+                const angle = Math.random() * Math.PI * 2;
+                const distance = 100 + Math.random() * 300;
+
+                const x = Math.cos(angle) * distance;
+                const y = Math.sin(angle) * distance;
+
+                heart.animate([
+                    {
+                        transform: "translate(-50%, -50%) scale(0)",
+                        opacity: 1
+                    },
+                    {
+                        transform: `translate(${x}px, ${y}px) scale(1.5)`,
+                        opacity: 0
+                    }
+                ], {
+                    duration: 1500,
+                    easing: "ease-out"
+                });
+
+                document.body.appendChild(heart);
+
+                setTimeout(() => {
+                    heart.remove();
+                }, 1600);
+            }
+        }
+
+    </script>
+
+</body>
+</html>
